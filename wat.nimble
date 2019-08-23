@@ -11,4 +11,4 @@ bin           = @["wat"]
 
 # Dependencies
 
-requires "nim >= 0.20.0", "jester", "ormin", "jwt", "nuuid"
+requires "nim >= 0.20.0", "jester", "ormin", "nuuid", "easy_bcrypt"
