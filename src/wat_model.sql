@@ -4,11 +4,20 @@ CREATE TABLE IF NOT EXISTS users
   , email TEXT UNIQUE
   , pw_hash TEXT
   , is_advertiser INTEGER
+  , activated INTEGER DEFAULT 0
   , created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   , deleted_at INTEGER
   );
 
 CREATE UNIQUE INDEX IF NOT EXISTS user_uuid ON users(uuid);
+
+CREATE TABLE IF NOT EXISTS activation_tokens
+  ( token TEXT UNIQUE
+  , already_used INTEGER DEFAULT 0
+  , user_id TEXT
+  , FOREIGN KEY (user_id)
+    REFERENCES users(uuid)
+  );
 
 CREATE TABLE IF NOT EXISTS images
   ( uuid TEXT UNIQUE

@@ -1,0 +1,14 @@
+#? stdtmpl(subsChar = '$', metaChar = '#')
+#proc genActivationEmail(token, baseURL, wmAddress: string): string =
+#  result = ""
+Hello!
+
+Thanks for registering on Within AdTech!
+
+Please click this link to activate your account:
+
+$baseURL/api/users/activate?token=$token
+
+If you don't know why you are recieving this message, please contact the webmaster at: $wmAddress
+
+Be well.
